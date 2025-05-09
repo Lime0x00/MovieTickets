@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.0">
+
+    <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+        <class>com.example.models.Movie</class>
+        <class>com.example.models.ScreenTime</class>
+        <class>com.example.models.Customer</class>
+        <class>com.example.models.Hall</class>
+        <class>com.example.models.Receipt</class>
+        <class>com.example.models.Seat</class>
+        <class>com.example.models.SeatHasReceiptId</class>
+        <class>com.example.models.SeatHasReceipt</class>
+        <class>com.example.models.ScreenTimeSeatId</class>
+        <class>com.example.models.ScreenTimeSeat</class>
+        <class>com.example.converters.InstantAttributeConverter</class>
+
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.weaving" value="false"/>
+            <property name="eclipselink.logging.level" value="OFF"/>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.MySQLPlatform"/>
+            <property name="jakarta.persistence.jdbc.driver"   value="org.mariadb.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"      value="jdbc:mariadb://localhost:3306/MovieTickets1"/>
+            <property name="jakarta.persistence.jdbc.user"     value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+        </properties>
+    </persistence-unit>
+</persistence>
